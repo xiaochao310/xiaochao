@@ -1,3 +1,22 @@
-td { font-size: 9pt}
+body
+{
+    font-size: 14px;
+    font-family: 微软雅黑;
+    color: Blue;
+    empty-cells: hide;
+}
 a { color: #000000; text-decoration: none}
+a:visited,a:active{ color:#005eac; }
 a:hover { color:#E78a29; text-decoration: none}
+.admtopdiv{ width:100%; height:30px; 
+background-color:#ebf6fc;
+}
+.contents{ width:100%; height:100%; border:1px dashed gray;} 
+.addTable{ width:100%; height:100%; }
+.addTable td.left{ text-align:right; border-right:1px dashed gray;  border-bottom:1px dashed gray; vertical-align:middle; width:15%; height:30px; margin:2px;}
+.addTable td.right{ text-align:left;  border-bottom:1px dashed gray; vertical-align:middle; margin:2px;}
+.spanTip{ font-size:x-small; color:Gray;}
+.addTable tr{ border-bottom:1px dashed gray;}
+.left{ text-align:left;}
+.right{ text-align:right;}
+/*类别页面样式*/

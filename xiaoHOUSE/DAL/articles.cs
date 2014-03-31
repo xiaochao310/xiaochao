@@ -1,4 +1,20 @@
-﻿using System;
+﻿/**  版本信息模板在安装目录下，可自行修改。
+* articles.cs
+*
+* 功 能： N/A
+* 类 名： articles
+*
+* Ver    变更日期             负责人  变更内容
+* ───────────────────────────────────
+* V0.01  2014/3/30 17:10:29   N/A    初版
+*
+* Copyright (c) 2012 Maticsoft Corporation. All rights reserved.
+*┌──────────────────────────────────┐
+*│　此技术信息为本公司机密信息，未经本公司书面同意禁止向第三方披露．　│
+*│　版权所有：动软卓越（北京）科技有限公司　　　　　　　　　　　　　　│
+*└──────────────────────────────────┘
+*/
+using System;
 using System.Data;
 using System.Text;
 using System.Data.SqlClient;
@@ -46,9 +62,9 @@ namespace xiaoHOUSE.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into articles(");
-			strSql.Append("title,contents,isDiscuss,counts,artType,temp1)");
+			strSql.Append("title,contents,isDiscuss,counts,artType,temp1,artDatetime)");
 			strSql.Append(" values (");
-			strSql.Append("@title,@contents,@isDiscuss,@counts,@artType,@temp1)");
+			strSql.Append("@title,@contents,@isDiscuss,@counts,@artType,@temp1,@artDatetime)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@title", SqlDbType.VarChar,200),
@@ -56,13 +72,15 @@ namespace xiaoHOUSE.DAL
 					new SqlParameter("@isDiscuss", SqlDbType.Int,4),
 					new SqlParameter("@counts", SqlDbType.Int,4),
 					new SqlParameter("@artType", SqlDbType.Int,4),
-					new SqlParameter("@temp1", SqlDbType.VarChar,50)};
+					new SqlParameter("@temp1", SqlDbType.VarChar,50),
+					new SqlParameter("@artDatetime", SqlDbType.DateTime)};
 			parameters[0].Value = model.title;
 			parameters[1].Value = model.contents;
 			parameters[2].Value = model.isDiscuss;
 			parameters[3].Value = model.counts;
 			parameters[4].Value = model.artType;
 			parameters[5].Value = model.temp1;
+			parameters[6].Value = model.artDatetime;
 
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
@@ -86,7 +104,8 @@ namespace xiaoHOUSE.DAL
 			strSql.Append("isDiscuss=@isDiscuss,");
 			strSql.Append("counts=@counts,");
 			strSql.Append("artType=@artType,");
-			strSql.Append("temp1=@temp1");
+			strSql.Append("temp1=@temp1,");
+			strSql.Append("artDatetime=@artDatetime");
 			strSql.Append(" where ID=@ID");
 			SqlParameter[] parameters = {
 					new SqlParameter("@title", SqlDbType.VarChar,200),
@@ -95,6 +114,7 @@ namespace xiaoHOUSE.DAL
 					new SqlParameter("@counts", SqlDbType.Int,4),
 					new SqlParameter("@artType", SqlDbType.Int,4),
 					new SqlParameter("@temp1", SqlDbType.VarChar,50),
+					new SqlParameter("@artDatetime", SqlDbType.DateTime),
 					new SqlParameter("@ID", SqlDbType.Int,4)};
 			parameters[0].Value = model.title;
 			parameters[1].Value = model.contents;
@@ -102,7 +122,8 @@ namespace xiaoHOUSE.DAL
 			parameters[3].Value = model.counts;
 			parameters[4].Value = model.artType;
 			parameters[5].Value = model.temp1;
-			parameters[6].Value = model.ID;
+			parameters[6].Value = model.artDatetime;
+			parameters[7].Value = model.ID;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -166,7 +187,7 @@ namespace xiaoHOUSE.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 ID,title,contents,isDiscuss,counts,artType,temp1 from articles ");
+			strSql.Append("select  top 1 ID,title,contents,isDiscuss,counts,artType,temp1,artDatetime from articles ");
 			strSql.Append(" where ID=@ID");
 			SqlParameter[] parameters = {
 					new SqlParameter("@ID", SqlDbType.Int,4)
@@ -222,6 +243,10 @@ namespace xiaoHOUSE.DAL
 				{
 					model.temp1=row["temp1"].ToString();
 				}
+				if(row["artDatetime"]!=null && row["artDatetime"].ToString()!="")
+				{
+					model.artDatetime=DateTime.Parse(row["artDatetime"].ToString());
+				}
 			}
 			return model;
 		}
@@ -232,7 +257,7 @@ namespace xiaoHOUSE.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select ID,title,contents,isDiscuss,counts,artType,temp1 ");
+			strSql.Append("select ID,title,contents,isDiscuss,counts,artType,temp1,artDatetime ");
 			strSql.Append(" FROM articles ");
 			if(strWhere.Trim()!="")
 			{
@@ -252,7 +277,7 @@ namespace xiaoHOUSE.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" ID,title,contents,isDiscuss,counts,artType,temp1 ");
+			strSql.Append(" ID,title,contents,isDiscuss,counts,artType,temp1,artDatetime ");
 			strSql.Append(" FROM articles ");
 			if(strWhere.Trim()!="")
 			{

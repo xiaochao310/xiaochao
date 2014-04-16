@@ -88,6 +88,11 @@
   <ItemGroup>
     <Content Include="Adminxiao\articlesAdd.aspx" />
     <Content Include="Adminxiao\artTypeManage.aspx" />
+    <Content Include="Adminxiao\imageManage.aspx" />
+    <Content Include="Adminxiao\image\admStyle.css" />
+    <Content Include="Adminxiao\image\btn_bg.gif" />
+    <Content Include="Adminxiao\image\tab_th_bg.jpg" />
+    <Content Include="Adminxiao\image\whood.gif" />
     <Content Include="Adminxiao\index.aspx" />
     <Content Include="Adminxiao\kindeditor-4.1.10\asp.net\bin\LitJSON.dll" />
     <Content Include="Adminxiao\kindeditor-4.1.10\asp.net\demo.aspx" />
@@ -346,11 +351,13 @@
     <Content Include="Adminxiao\kindeditor-4.1.10\themes\qq\editor.gif" />
     <Content Include="Adminxiao\kindeditor-4.1.10\themes\qq\qq.css" />
     <Content Include="Adminxiao\kindeditor-4.1.10\themes\simple\simple.css" />
+    <Content Include="Adminxiao\Script\admJs.js" />
     <Content Include="Adminxiao\Script\Calendar.js" />
     <Content Include="Adminxiao\Script\function.js" />
     <Content Include="Adminxiao\Script\jquery-1.4.1-vsdoc.js" />
     <Content Include="Adminxiao\Script\jquery-1.4.1.js" />
     <Content Include="Adminxiao\Script\jquery-1.4.1.min.js" />
+    <Content Include="Adminxiao\Script\Jquery.doc.js" />
     <Content Include="Adminxiao\Script\PropDiv.js" />
     <Content Include="Adminxiao\Script\ui\js\ligerBuild.min.js" />
     <Content Include="Adminxiao\Script\ui\js\ligerBuild.source.js" />
@@ -497,6 +504,7 @@
     <Content Include="Adminxiao\Script\ui\skins\Aqua\images\tree\tree.png" />
     <Content Include="Adminxiao\Style\admstyle.css" />
     <Content Include="Adminxiao\Style\AspNetPager.css" />
+    <Content Include="Adminxiao\updateImage.aspx" />
     <Content Include="bin\Common.dll" />
     <Content Include="bin\LitJSON.dll" />
     <Content Include="bin\xiaochaoCommon.XML" />
@@ -504,6 +512,8 @@
     <Content Include="Controls\checkright.ascx" />
     <Content Include="Controls\copyright.ascx" />
     <Content Include="Controls\PicViews.ascx" />
+    <Content Include="css\jqzoom.css" />
+    <Content Include="css\style.css" />
     <Content Include="Global.asax" />
     <Content Include="Images\backgroundImages\bg1.jpg" />
     <Content Include="Images\backgroundImages\bg2.jpg" />
@@ -516,6 +526,10 @@
     <Content Include="Images\indexImages\imageTest3.jpg" />
     <Content Include="Images\indexImages\imageTest4.jpg" />
     <Content Include="index.aspx" />
+    <Content Include="index.html" />
+    <Content Include="js\jquery.jqzoom.js" />
+    <Content Include="js\cloud-zoom.1.0.2.js" />
+    <Content Include="cloud-zoom.css" />
     <Content Include="js\jquery-1.4.1-vsdoc.js" />
     <Content Include="js\jquery-1.4.1.js" />
     <Content Include="js\jquery-1.4.1.min.js" />
@@ -524,6 +538,7 @@
     <Content Include="test\images\imageTest2.jpg" />
     <Content Include="test\images\imageTest3.jpg" />
     <Content Include="test\images\imageTest4.jpg" />
+    <Content Include="test\images\副本 imageTest1.jpg" />
     <Content Include="test\JQueryyZoom.aspx" />
     <Content Include="test\kindeditor-4.1.10\asp.net\bin\LitJSON.dll" />
     <Content Include="test\kindeditor-4.1.10\asp.net\demo.aspx" />
@@ -906,12 +921,26 @@
     <Compile Include="Adminxiao\artTypeManage.aspx.designer.cs">
       <DependentUpon>artTypeManage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Adminxiao\imageManage.aspx.cs">
+      <DependentUpon>imageManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adminxiao\imageManage.aspx.designer.cs">
+      <DependentUpon>imageManage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Adminxiao\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Adminxiao\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adminxiao\updateImage.aspx.cs">
+      <DependentUpon>updateImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adminxiao\updateImage.aspx.designer.cs">
+      <DependentUpon>updateImage.aspx</DependentUpon>
     </Compile>
     <Compile Include="contents.aspx.cs">
       <DependentUpon>contents.aspx</DependentUpon>

@@ -159,6 +159,13 @@
                     <li><a href="javascript:f_addTab('art_type','文章类别管理','artTypeManage.aspx')">文章类别管理</a></li>
                 </ul>
             </div>
+             <div title="图片管理" iconcss="menu-icon-model">
+                <ul class="nlist">
+                    <li><a href="javascript:f_addTab('imageManage','图片管理','imageManage.aspx')">图片管理</a></li>
+                    <li><a href="javascript:f_addTab('art_new','新增文章','articlesAdd.aspx')">新增文章</a></li>
+                    <li><a href="javascript:f_addTab('art_type','文章类别管理','artTypeManage.aspx')">文章类别管理</a></li>
+                </ul>
+            </div>
           <%--  
             <div title="会员管理" iconcss="menu-icon-member">
                 <ul class="nlist">

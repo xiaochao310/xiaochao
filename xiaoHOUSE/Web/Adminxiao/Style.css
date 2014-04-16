@@ -10,6 +10,8 @@ a:visited,a:active{ color:#005eac; }
 a:hover { color:#E78a29; text-decoration: none}
 .admtopdiv{ width:100%; height:30px; 
 background-color:#ebf6fc;
+text-align:center;
+font-size:18px;
 }
 .contents{ width:100%; height:100%; border:1px dashed gray;} 
 .addTable{ width:100%; height:100%; }

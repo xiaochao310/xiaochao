@@ -6,11 +6,16 @@
 <head runat="server">
     <title>Jquery图片放大镜效果测试</title>
     <script src="../js/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <link href="../css/jqzoom.css" rel="stylesheet" type="text/css" />
+    <script src="../js/jquery.jqzoom.js" type="text/javascript"></script>
     <script type="text/javascript" language="javascript">
         $(document).ready(function () {
-            
-
-
+            $(".jqzoom").jqueryzoom({
+                xzoom: 300,  // 放大图的宽
+                yzoom: 300,  // 放大图的高
+                offset: 30,   // 放大图距离原图的位置
+                position: 'right'  // 放大图在原图的右边(默认为right)
+            });
         });
     
     </script>
@@ -31,8 +36,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div >
-        <img id="small" src="images/imageTest1.jpg" />
+    <div class="jqzoom"  >
+        <img id="small" src="images/imageTest1.jpg" jqimg="images/imageTest1.jpg" />
     </div>
     <br />
     <div id="big"></div>

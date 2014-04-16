@@ -37,9 +37,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
         <div class="admtopdiv">
-            <asp:ScriptManager ID="ScriptManager1" runat="server">
-            </asp:ScriptManager>
             新增文章</div>
         <div class="contents">
             <div style="width: 100%; height: 100%;">

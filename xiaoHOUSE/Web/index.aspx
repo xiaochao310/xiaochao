@@ -42,7 +42,6 @@
             <div class="headerdiv">
                 <div id="picViewBox">
                     <div class="picture">
-
                         <img src="images/indexImages/imageTest1.jpg" title="imagetest1" alt="imagetest11111" />
                         <img src="images/indexImages/imageTest2.jpg" title="imagetest2" alt="imagetest21111" />
                         <img src="images/indexImages/imageTest3.jpg" title="imagetest3" alt="imagetest31111" />

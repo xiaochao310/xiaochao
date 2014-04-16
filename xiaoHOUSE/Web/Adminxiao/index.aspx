@@ -154,7 +154,7 @@
             <%--文章 --%>
             <div title="文章管理" iconcss="menu-icon-model">
                 <ul class="nlist">
-                    <li><a href="javascript:f_addTab('art_manage','文章查看','daixiang/dxcheck.aspx')">文章查看</a></li>
+                    <li><a href="javascript:f_addTab('art_manage','文章管理',' articleMange.aspx')">文章管理</a></li>
                     <li><a href="javascript:f_addTab('art_new','新增文章','articlesAdd.aspx')">新增文章</a></li>
                     <li><a href="javascript:f_addTab('art_type','文章类别管理','artTypeManage.aspx')">文章类别管理</a></li>
                 </ul>

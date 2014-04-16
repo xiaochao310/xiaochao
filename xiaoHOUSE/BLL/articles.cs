@@ -188,7 +188,9 @@ namespace xiaoHOUSE.BLL
 
 		#endregion  BasicMethod
 		#region  ExtensionMethod
-
+        public DataSet GetListByPage(string strWhere, string orderby, int pagesize, int pageindex, out int totalcout) {
+            return dal.GetListByPage(strWhere, orderby, pagesize, pageindex, out totalcout);
+        }
 		#endregion  ExtensionMethod
 	}
 }

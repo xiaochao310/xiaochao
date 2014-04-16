@@ -86,6 +86,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Adminxiao\articleMange.aspx" />
     <Content Include="Adminxiao\articlesAdd.aspx" />
     <Content Include="Adminxiao\artTypeManage.aspx" />
     <Content Include="Adminxiao\imageManage.aspx" />
@@ -906,6 +907,13 @@
     </Compile>
     <Compile Include="Adminxiao\Accounts\userupdate.aspx.designer.cs">
       <DependentUpon>userupdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Adminxiao\articleMange.aspx.cs">
+      <DependentUpon>articleMange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adminxiao\articleMange.aspx.designer.cs">
+      <DependentUpon>articleMange.aspx</DependentUpon>
     </Compile>
     <Compile Include="Adminxiao\articlesAdd.aspx.cs">
       <DependentUpon>articlesAdd.aspx</DependentUpon>

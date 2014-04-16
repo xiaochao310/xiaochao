@@ -74,7 +74,7 @@ namespace xiaoHOUSE.Web.Adminxiao
             Model.artType typeModel = new Model.artType();
             DataSet ds = typeBll.GetAllList();
             drop.Items.Clear();
-            drop.Items.Add(new ListItem("---------请选择目录--------", "0"));
+            drop.Items.Add(new ListItem("---------请选择--------", "0"));
             InitList(drop, 0, ds, "");
         }
 

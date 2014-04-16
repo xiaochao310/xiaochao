@@ -11,15 +11,23 @@ namespace xiaoHOUSE.Web
     public partial class index : System.Web.UI.Page
     {
         BLL.articles articlebll = new BLL.articles();
+        BLL.images imagebll = new BLL.images();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) { bindData(); }
+            if (!IsPostBack) { bindData(); bindImage(); }
         }
 
         protected void bindData()
         {
             rpt_articles.DataSource = articlebll.GetAllList();
             rpt_articles.DataBind();
+
+        }
+
+        protected void bindImage()
+        {
+            rptImage.DataSource = imagebll.GetAllList();
+            rptImage.DataBind();
         }
 
         public string getComments(string htmlTxt)
@@ -29,7 +37,7 @@ namespace xiaoHOUSE.Web
             {
                 txt = txt.Substring(1, 200);
             }
-            return "&nbsp;&nbsp;&nbsp;&nbsp;"+txt+"...";
+            return "&nbsp;&nbsp;&nbsp;&nbsp;" + txt + "...";
         }
 
     }
